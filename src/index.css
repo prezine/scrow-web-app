@@ -1,0 +1,214 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+  .trans-all-500-ease-in-out{
+    @apply transition-all duration-500 ease-in-out
+  }
+  .text-20{
+    @apply text-sm sm:text-base md:text-lg xl:text-xl
+  }
+  .text-24{
+    @apply text-base sm:text-lg md:text-xl xl:text-2xl
+  }
+  .text-30{
+    @apply text-xl md:text-2xl xl:text-3xl
+  }
+  .text-40{
+    @apply text-2xl md:text-3xl xl:text-4xl
+  }
+  .text-50{
+    @apply text-3xl xl:text-5xl leading-normal
+  }
+  .text-60{
+    @apply text-3xl md:text-4xl lg:text-6xl leading-normal
+  }
+
+  /* .toggle-checkbox:checked + .toggle-label {
+    @apply: bg-green-400;
+    background-color: #3BB75E;
+  } */
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+-webkit-appearance: none; 
+ margin: 0; 
+}
+
+
+/* prevents zooming on input fields */
+input:not(.no--zoom) {
+  font-size: 16px !important;
+}
+
+input:-webkit-autofill {
+  /* -webkit-box-shadow: 0 0 0px 1000px #fff inset !important; */
+  border-color: inherit !important;
+  background-color: transparent !important;
+}
+
+.virtual--card{
+  background: url('./assets/media/images/Credit-Card-Backdrop.png');
+}
+
+
+
+.input-grid-two{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 50%));
+}
+
+.active--icon > svg > path{
+  stroke: #2A2AB2;
+}
+
+.not--active--icon:hover > svg > path {
+  stroke: #2A2AB2;
+  transition: all 500ms ease-in-out;
+}
+
+input[type="password"]::-ms-reveal{
+  display: none;
+}
+
+input[type="date"] {
+  position: relative;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  height: auto;
+  color: transparent;
+  background: transparent;
+}
+.swiper.swiper-horizontal.virtual--card--swiper > .swiper-pagination-bullets > .swiper-pagination-bullet{
+  width: 10px;
+  height: 10px;
+}
+.swiper.swiper-horizontal.virtual--card--swiper > .swiper-pagination-bullets > .swiper-pagination-bullet-active {
+  background-color: black;
+}
+
+.clip--path{
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+   clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+   height: 0;
+   overflow: hidden;
+}
+
+.unclip--path{
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+   height: auto;
+   overflow: visible;
+}
+
+.skeleton{
+  overflow: hidden;
+  position: relative;
+  background-color: #8b8b8b7a;
+}
+
+.skeleton--white{
+  overflow: hidden;
+  position: relative;
+  background-color: #F4F4F4;
+}
+
+.skeleton::before{
+  content: '';
+  display: block;
+  position: absolute;
+  left: -150px;
+  top: 0;
+  height: 100%;
+  width: 150px;
+  background: linear-gradient(to right, transparent 0%, #dadada 50%, transparent 100%);
+  -webkit-animation: load 1s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+  animation: load 1s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+}
+.skeleton--white::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: -150px;
+  top: 0;
+  height: 100%;
+  width: 150px;
+  background: linear-gradient(to right, transparent 0%, #eeeeee 50%, transparent 100%);
+  -webkit-animation: load 1s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+  animation: load 1s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+}
+
+@keyframes load {
+  from {
+      left: -150px;
+  }
+  to   {
+      left: 100%;
+  }
+}
+
+
+.one-lined-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* number of lines to show */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.two-lined-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.three-lined-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* number of lines to show */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.four-lined-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* number of lines to show */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.five-lined-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 5; /* number of lines to show */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.view--trans--body{
+  animation: slideIn 500ms ease-in-out forwards;
+}
+
+.nav--shadow{
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+@keyframes slideIn {
+  0%{
+    transform: translateX(100%);
+  }
+  100%{
+    transform: translateX(0%);
+  }
+}
